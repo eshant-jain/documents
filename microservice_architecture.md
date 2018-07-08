@@ -6,7 +6,8 @@ Microservices can be written in below three framworks:
  
  Principles of Microservices
  SOA vs Microservices
- 
+ Best Practices and naming conventions
+ Deployment
  
  A. Spring boot
  Different dependencies solving similar problem
@@ -22,6 +23,12 @@ Microservices can be written in below three framworks:
  Testing: JUnit, ScalaTest, FrisbyJS, Calabash Selenium
  
  C. Grails
+ 
+ 
+ REST API Documentation
+   Swagger ( OpenAPI Specification ): From January 1st 2016 the Swagger Specification has been donated to to the Open API Initiative (OAI) and has been renamed to the OpenAPI Specification. The Open API specification is backed by the likes of Google, Microsft and IBM.
+   RAML  (RESTful API Modeling Language)
+   API Blue Print 
  
  
  Database:
