@@ -2,60 +2,59 @@
 # Modules:  
 * Spring core, security
 
+Q: Bean Life-cycle    
+Q: Bean Scopes  
+Q: Difference between The BeanFactory and the ApplicaitonContext in spring framework?    
+Q: Difference between <context:annotation-config> vs <context:component-scan>?  
+Q: Spring Circular Dependency management?
+Q: Spring life-cycle BeanAware or BeanName  
+Q: Different Bean Injection Scenarios Possible or not  
+  can you inject a singleton bean into prototype bean?  
+  can you inject a singleton bean into singleton bean?  
+  can you inject a prototype bean into singleton bean?  
+  can you inject a prototype bean into prototype bean?  
+Q: Explain all the Propagations available in spring?(Transaction management)  
+Q: How did you configure spring with Hibernate  
+Q: Spring - Java Based Configuration?  
+Q: Why DB security(ROLE BASED authentication) vs ORM  
 
-Q. Why DB security(ROLE BASED authentication) vs ORM  
-Q. Spring life-cycle BeanAware or BeanName  
-Q: Difference between The BeanFactory and the ApplicaitonContext in spring framework?  
-Q. How did you configure spring with Hibernate  
-Q. How did you configure spring with hibernate
-Q. Different BEan Injection Scenarios Possible or not
-  can you inject a singleton bean into prototype bean?
-  can you inject a singleton bean into singleton bean?
-  can you inject a prototype bean into singleton bean?
-  can you inject a prototype bean into prototype bean?
-Q. Difference between <context:annotation-config> vs <context:component-scan>?
-Q: Spring - Java Based Configuration?
-Q. Spring Circular Dependency management?
 
-
-** Q: Difference between The BeanFactory and the ApplicaitonContext in spring framework? ** 
-Ref: https://stackoverflow.com/questions/243385/beanfactory-vs-applicationcontext
-A:Actually they both are ways to get beans from your spring IOC container but still there are some difference.
+**Q: Difference between The BeanFactory and the ApplicaitonContext in spring framework?**  
+**Ref**: https://stackoverflow.com/questions/243385/beanfactory-vs-applicationcontext
+**Ans:** Actually they both are ways to get beans from your spring IOC container but still there are some difference.
 I would like to give some reference which may clear your doubts.
 BeanFactory is the actual container which instantiates, configures, and manages a number of beans. These beans typically collaborate with one another, and thus have dependencies between themselves. These dependencies are reflected in the configuration data used by the BeanFactory.
 A BeanFactory is represented by the interface "org.springframework.beans.factory". BeanFactory, for which there are multiple implementations.
 ClassPathResource myResource= new ClassPathResource("beans.xml"); XmlBeanFactory factory = new XmlBeanFactory(myResource);
-is a way to get beans.
+is a way to get beans.  
 
-** DIFFERENCE **
-  1. BeanFactory instantiate bean when you call getBean() method whileApplicationContext instantiate Singleton bean when container is started,  It doesn't wait for getBean() to be called. 
-  2. BeanFactory doesn't provide support for internationalization butApplicationContext provides support for it.
-  3. Another difference between BeanFactory vs ApplicationContext is ability to publish event to beans that are registered as listener.
-  4. One of the popular implementation of BeanFactory interface is XMLBeanFactorywhile one of the popular implementation of ApplicationContext interface isClassPathXmlApplicationContext.
-  5. If you are using auto wiring and using BeanFactory than you need to registerAutoWiredBeanPostProcessor using API which you can configure in XML if you are using  ApplicationContext. In summary BeanFactory is OK for testing and non production use but ApplicationContext is more feature rich container implementation and should be favored over BeanFactory
+**DIFFERENCE**
+  1. BeanFactory instantiate bean when you call getBean() method whileApplicationContext instantiate Singleton bean when container is started,  It doesn't wait for getBean() to be called.   
+  2. BeanFactory doesn't provide support for internationalization butApplicationContext provides support for it.  
+  3. Another difference between BeanFactory vs ApplicationContext is ability to publish event to beans that are registered as listener. 
+  4. One of the popular implementation of BeanFactory interface is XMLBeanFactorywhile one of the popular implementation of ApplicationContext interface isClassPathXmlApplicationContext.  
+  5. If you are using auto wiring and using BeanFactory than you need to registerAutoWiredBeanPostProcessor using API which you can configure in XML if you are using  ApplicationContext. In summary BeanFactory is OK for testing and non production use but ApplicationContext is more feature rich container implementation and should be favored over BeanFactory  
 
-** Summary: ** 
-Bean Factory
-  •	Bean instantiation/wiring
-Application Context
-  •	Bean instantiation/wiring
-  •	Automatic BeanPostProcessor registration
-  •	Automatic BeanFactoryPostProcessor registration
-  •	Convenient MessageSource access (for i18n)
-  •	ApplicationEvent publication
+**Summary:** 
+Bean Factory  
+  •	Bean instantiation/wiring  
+Application Context  
+  •	Bean instantiation/wiring  
+  •	Automatic BeanPostProcessor registration  
+  •	Automatic BeanFactoryPostProcessor registration  
+  •	Convenient MessageSource access (for i18n)  
+  •	ApplicationEvent publication  
 
+**Q. Difference between <context:annotation-config> vs <context:component-scan>?** 
+**Ref:** http://stackoverflow.com/questions/7414794/difference-between-contextannotation-config-vs-contextcomponent-scan 
 
-
-Q. Difference between <context:annotation-config> vs <context:component-scan>?
-Ref: http://stackoverflow.com/questions/7414794/difference-between-contextannotation-config-vs-contextcomponent-scan 
-
-Q: How to configure spring in Tomcat(xml and java config approach)?
-A:From the spring docs: 
+**Q: How to configure spring in Tomcat(xml and java config approach)?**
+**Ans:** From the spring docs: 
 Spring can be easily integrated into any Java-based web framework.  
 All you need to do is to declare the ContextLoaderListener in your web.xml and use a contextConfigLocation to set which context files to load.
 
-** A. XML Approach **
-Web.xml
+**A. XML Approach**
+1. Web.xml
 ```
 <context-param>
   <param-name>contextConfigLocation</param-name>
@@ -66,7 +65,7 @@ Web.xml
 </listener>
 ```
 
-Sample Spring MVC XML config
+2. Sample Spring MVC XML config
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
@@ -107,8 +106,8 @@ You can also specify context location relatively to current classpath, which may
 ```
 
 
-** Java Config Approach with web.xml (non spring boot approach)  **   
-Ref: https://stackoverflow.com/questions/8075790/how-to-register-spring-configuration-annotated-class-instead-of-applicationcont  
+**B. Java Config Approach with web.xml (non spring boot approach)**   
+**Ref:** https://stackoverflow.com/questions/8075790/how-to-register-spring-configuration-annotated-class-instead-of-applicationcont  
 ```
 <web-app>
   <context-param>
@@ -146,13 +145,12 @@ public class Application {
 }
 ```
 
-Q. How did you configure spring with hibernate
 Q. Different BEan Injection Scenarios Possible or not
-can you inject a singleton bean into prototype bean?
-can you inject a singleton bean into singleton bean?
-can you inject a prototype bean into singleton bean?
-can you inject a prototype bean into prototype bean?
-
+  * can you inject a singleton bean into prototype bean?
+  * can you inject a singleton bean into singleton bean?
+  * can you inject a prototype bean into singleton bean?
+  * can you inject a prototype bean into prototype bean?
+**Ans:**
 >>singleton bean is wired with yet another singleton bean, there is absolutely no problem
 >>Spring core comes out-of-the-box with two scopes: singletons and prototypes. Singletons implement the Singleton pattern, meaning there's only a single instance at runtime (in a JVM). Spring instantiates them during context creation, caches them in the context, and serves them from the cache when needed (or something like that). Prototypes are instantiated each time you access the context to get the bean.
 
