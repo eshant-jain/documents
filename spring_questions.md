@@ -208,8 +208,11 @@ http://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope
 
 Class and respective Jars  
 | Class Name                                             | Jar Name      |
-| ----------------------------------------------------- | ----------- |
+| ------------- |:-------------:|
 | org.springframework.stereotype.Controller              | spring context |
 | org.springframework.ui.ModelMap                        | spring context |
 | org.springframework.web.bind.annotation.RequestMapping | spring web     |
 | org.springframework.web.bind.annotation.PathVariable   | spring web     |
+
+| Tables        | Are           |
+| ------------- |:-------------:|
