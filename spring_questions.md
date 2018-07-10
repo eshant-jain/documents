@@ -53,6 +53,7 @@ Spring 2.5 introduces further stereotype annotations: @Component, @Service, and 
 Therefore, you can annotate your component classes with @Component, but by annotating them with @Repository, @Service, or @Controller instead, your classes are more properly suited for processing by tools or associating with aspects. For example, these stereotype annotations make ideal targets for pointcuts.
 
 Thus, if you are choosing between using @Component or @Service for your service layer, @Service is clearly the better choice. Similarly, as stated above, @Repository is already supported as a marker for automatic exception translation in your persistence layer.
+
 | Annotation | Meaning                                             |
 | ---------- | -------------------------------------------------: |
 | @Component | generic stereotype for any Spring-managed component |
@@ -207,6 +208,7 @@ http://www.javacreed.com/why-should-we-use-maven/
 http://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope  
 
 Class and respective Jars  
+
 | Class Name | Jar Name |
 | ------------- |:-------------:|
 | org.springframework.stereotype.Controller | spring context |
