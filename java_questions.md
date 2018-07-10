@@ -29,6 +29,7 @@ What is this in synchronized block(this)
 Class level and Object level synchronization  
 BlockingQue?
 What is concurrent counterpart for LinkedBlockingQueue?
+What is dead-lock and write a code to show dead-lock?  
 
 What is Executor framework?  
 Executor Service?  
