@@ -161,3 +161,10 @@ http://stackoverflow.com/questions/7414794/difference-between-contextannotation-
 http://howtodoinjava.com/spring/spring-mvc/spring-mvc-difference-between-contextannotation-config-vs-contextcomponent-scan/
 http://www.javacreed.com/why-should-we-use-maven/
 http://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope
+
+Class and respective Jars
+org.springframework.stereotype.Controller; >> spring context
+org.springframework.ui.ModelMap >> spring context
+
+org.springframework.web.bind.annotation.RequestMapping >> spring web
+org.springframework.web.bind.annotation.PathVariable >> spring web
