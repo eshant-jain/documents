@@ -1,38 +1,48 @@
+# Spring Core
 What is Dependency Injection and it types?  
+Write a code to show where exactly there is dependency injection?  
+Different Bean Injection Scenarios Possible or not  
+  Can you inject a singleton bean into prototype bean?  
+  Can you inject a singleton bean into singleton bean?  
+  Can you inject a prototype bean into singleton bean?  
+  Can you inject a prototype bean into prototype bean?  
 What is BeanFactory?   
 Does BeanFactory support Annotations?  
 Difference between BeanFactory and ApplicationContext?  
-Bean Life-cycle?      
-Bean Scopes?    
-Difference between The BeanFactory and the ApplicaitonContext in spring framework?    
+Spring Bean Life-cycle?      
+What are the Bean Scopes?    
 When are the beans initialized in Spring?  
-What is Autowiring?  
-Types of Autowiring?  
-Difference between @Service and @Component and @Resource?  
-@Component, @Resource, @Service?  
-
-Difference between <context:annotation-config> vs <context:component-scan>?  
+What is Autowiring and its Types?  
 Spring Circular Dependency management?
 Spring life-cycle BeanAware or BeanName  
-Different Bean Injection Scenarios Possible or not  
-  can you inject a singleton bean into prototype bean?  
-  can you inject a singleton bean into singleton bean?  
-  can you inject a prototype bean into singleton bean?  
-  can you inject a prototype bean into prototype bean?  
+Difference between @Service and @Component and @Resource?  
+Difference between <context:annotation-config> vs <context:component-scan>?  
+How to get property file in Spring?  
+Spring - XML vs Annotations vs Java Based Configuration?  
+What is connection pool and why do we use it?  
 
+# Spring MVC
+Explain Spring MVC and filters in it?
+What is dispatcherservlet in Spring MVC?
+
+# Spring ORM
 Explain all the Propagations available in spring?(Transaction management)  
 How did you configure spring with Hibernate  
-Spring - Java Based Configuration?  
 Why DB security(ROLE BASED authentication) vs ORM  
-How to get property file in Spring?  
-Explain Spring MVC and filters in it?    
+
+# Spring AOP
+What is AOP?  
 How Aspects work?   
-What is connection pool and why do we use it?  
+Aspectj or spring xml based?  
+
+
+# Spring Boot
 How to configure spring boot?  
 How WSDL are generated in SOAP for Spring Boot app?  
 How to configure transaction via Spring?  
 What is Proxy and why?  
 
+# Answers to Questions Above
 When are the beans initialized in Spring?  
 A: All singleton beans are initialized as context initialization while using applicationContext and at getBean when BeanFactory is used.  
 @Component, @Resource, @Service?  
@@ -44,7 +54,7 @@ Therefore, you can annotate your component classes with @Component, but by annot
 
 Thus, if you are choosing between using @Component or @Service for your service layer, @Service is clearly the better choice. Similarly, as stated above, @Repository is already supported as a marker for automatic exception translation in your persistence layer.
 | Annotation | Meaning                                             |
-|----------- |:---------------------------------------------------:|
+| ---------- | :-------------------------------------------------: |
 | @Component | generic stereotype for any Spring-managed component |
 | @Repository| stereotype for persistence layer                    |
 | @Service   | stereotype for service layer                        |
@@ -197,9 +207,9 @@ http://www.javacreed.com/why-should-we-use-maven/
 http://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope  
 
 Class and respective Jars  
-|Class Name                                             | Jar Name      |
-|-------------------------------------------------------|:--------------|
-|org.springframework.stereotype.Controller              |spring context |
-|org.springframework.ui.ModelMap                        |spring context |
-|org.springframework.web.bind.annotation.RequestMapping |spring web     |
-|org.springframework.web.bind.annotation.PathVariable   |spring web     |
+| Class Name                                             | Jar Name      |
+| -----------------------------------------------------  | :-----------: |
+| org.springframework.stereotype.Controller              | spring context |
+| org.springframework.ui.ModelMap                        | spring context |
+| org.springframework.web.bind.annotation.RequestMapping | spring web     |
+| org.springframework.web.bind.annotation.PathVariable   | spring web     |
