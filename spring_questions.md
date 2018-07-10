@@ -1,22 +1,57 @@
+What is Dependency Injection and it types?  
+What is BeanFactory?   
+Does BeanFactory support Annotations?  
+Difference between BeanFactory and ApplicationContext?  
+Bean Life-cycle?      
+Bean Scopes?    
+Difference between The BeanFactory and the ApplicaitonContext in spring framework?    
+When are the beans initialized in Spring?  
+What is Autowiring?  
+Types of Autowiring?  
+Difference between @Service and @Component and @Resource?  
+@Component, @Resource, @Service?  
 
-# Modules:  
-* Spring core, security
-
-Q: Bean Life-cycle    
-Q: Bean Scopes  
-Q: Difference between The BeanFactory and the ApplicaitonContext in spring framework?    
-Q: Difference between <context:annotation-config> vs <context:component-scan>?  
-Q: Spring Circular Dependency management?
-Q: Spring life-cycle BeanAware or BeanName  
-Q: Different Bean Injection Scenarios Possible or not  
+Difference between <context:annotation-config> vs <context:component-scan>?  
+Spring Circular Dependency management?
+Spring life-cycle BeanAware or BeanName  
+Different Bean Injection Scenarios Possible or not  
   can you inject a singleton bean into prototype bean?  
   can you inject a singleton bean into singleton bean?  
   can you inject a prototype bean into singleton bean?  
   can you inject a prototype bean into prototype bean?  
-Q: Explain all the Propagations available in spring?(Transaction management)  
-Q: How did you configure spring with Hibernate  
-Q: Spring - Java Based Configuration?  
-Q: Why DB security(ROLE BASED authentication) vs ORM  
+
+Explain all the Propagations available in spring?(Transaction management)  
+How did you configure spring with Hibernate  
+Spring - Java Based Configuration?  
+Why DB security(ROLE BASED authentication) vs ORM  
+How to get property file in Spring?  
+Explain Spring MVC and filters in it?    
+How Aspects work?   
+What is connection pool and why do we use it?  
+How to configure spring boot?  
+How WSDL are generated in SOAP for Spring Boot app?  
+How to configure transaction via Spring?  
+What is Proxy and why?  
+
+When are the beans initialized in Spring?  
+A: All singleton beans are initialized as context initialization while using applicationContext and at getBean when BeanFactory is used.  
+@Component, @Resource, @Service?  
+Ans: In Spring 2.0 and later, the @Repository annotation is a marker for any class that fulfills the role or stereotype (also known as Data Access Object or DAO) of a repository. Among the uses of this marker is the automatic translation of exceptions.
+
+Spring 2.5 introduces further stereotype annotations: @Component, @Service, and @Controller. @Component is a generic stereotype for any Spring-managed component. @Repository, @Service, and @Controller are specializations of @Component for more specific use cases, for example, in the persistence, service, and presentation layers, respectively.
+
+Therefore, you can annotate your component classes with @Component, but by annotating them with @Repository, @Service, or @Controller instead, your classes are more properly suited for processing by tools or associating with aspects. For example, these stereotype annotations make ideal targets for pointcuts.
+
+Thus, if you are choosing between using @Component or @Service for your service layer, @Service is clearly the better choice. Similarly, as stated above, @Repository is already supported as a marker for automatic exception translation in your persistence layer.
+| Annotation | Meaning                                             |
+|----------- |:---------------------------------------------------:|
+| @Component | generic stereotype for any Spring-managed component |
+| @Repository| stereotype for persistence layer                    |
+| @Service   | stereotype for service layer                        |
+| @Controller| stereotype for presentation layer (spring-mvc)      |
+
+How to get property file in Spring?  
+A: PropertyPlaceHolderConfigurer.  
 
 
 **Q: Difference between The BeanFactory and the ApplicaitonContext in spring framework?**  
@@ -145,26 +180,26 @@ public class Application {
 }
 ```
 
-Q. Different BEan Injection Scenarios Possible or not
+Different Bean Injection Scenarios Possible or not
   * can you inject a singleton bean into prototype bean?
   * can you inject a singleton bean into singleton bean?
   * can you inject a prototype bean into singleton bean?
   * can you inject a prototype bean into prototype bean?
 **Ans:**
->>singleton bean is wired with yet another singleton bean, there is absolutely no problem
->>Spring core comes out-of-the-box with two scopes: singletons and prototypes. Singletons implement the Singleton pattern, meaning there's only a single instance at runtime (in a JVM). Spring instantiates them during context creation, caches them in the context, and serves them from the cache when needed (or something like that). Prototypes are instantiated each time you access the context to get the bean.
+Singleton bean is wired with yet another singleton bean, there is absolutely no problem  
+Spring core comes out-of-the-box with two scopes: singletons and prototypes. Singletons implement the Singleton pattern, meaning there's only a single instance at runtime (in a JVM). Spring instantiates them during context creation, caches them in the context, and serves them from the cache when needed (or something like that). Prototypes are instantiated each time you access the context to get the bean.
 
+**References:**
+http://stackoverflow.com/questions/25708452/spring-web-context-without-spring-mvc  
+http://stackoverflow.com/questions/7414794/difference-between-contextannotation-config-vs-contextcomponent-scan  
+http://howtodoinjava.com/spring/spring-mvc/spring-mvc-difference-between-contextannotation-config-vs-contextcomponent-scan/  
+http://www.javacreed.com/why-should-we-use-maven/  
+http://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope  
 
-** References: **
-http://stackoverflow.com/questions/25708452/spring-web-context-without-spring-mvc
-http://stackoverflow.com/questions/7414794/difference-between-contextannotation-config-vs-contextcomponent-scan
-http://howtodoinjava.com/spring/spring-mvc/spring-mvc-difference-between-contextannotation-config-vs-contextcomponent-scan/
-http://www.javacreed.com/why-should-we-use-maven/
-http://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope
-
-Class and respective Jars
-org.springframework.stereotype.Controller; >> spring context
-org.springframework.ui.ModelMap >> spring context
-
-org.springframework.web.bind.annotation.RequestMapping >> spring web
-org.springframework.web.bind.annotation.PathVariable >> spring web
+Class and respective Jars  
+|Class Name                                             | Jar Name      |
+|-------------------------------------------------------|:--------------|
+|org.springframework.stereotype.Controller              |spring context |
+|org.springframework.ui.ModelMap                        |spring context |
+|org.springframework.web.bind.annotation.RequestMapping |spring web     |
+|org.springframework.web.bind.annotation.PathVariable   |spring web     |
