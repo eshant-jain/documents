@@ -54,11 +54,11 @@ Therefore, you can annotate your component classes with @Component, but by annot
 
 Thus, if you are choosing between using @Component or @Service for your service layer, @Service is clearly the better choice. Similarly, as stated above, @Repository is already supported as a marker for automatic exception translation in your persistence layer.
 | Annotation | Meaning                                             |
-| ---------- | :-------------------------------------------------: |
+| ---------- | -------------------------------------------------: |
 | @Component | generic stereotype for any Spring-managed component |
-| @Repository| stereotype for persistence layer                    |
+| @Repository | stereotype for persistence layer                    |
 | @Service   | stereotype for service layer                        |
-| @Controller| stereotype for presentation layer (spring-mvc)      |
+| @Controller | stereotype for presentation layer (spring-mvc)      |
 
 How to get property file in Spring?  
 A: PropertyPlaceHolderConfigurer.  
@@ -208,7 +208,7 @@ http://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope
 
 Class and respective Jars  
 | Class Name                                             | Jar Name      |
-| -----------------------------------------------------  | :-----------: |
+| ----------------------------------------------------- | ----------- |
 | org.springframework.stereotype.Controller              | spring context |
 | org.springframework.ui.ModelMap                        | spring context |
 | org.springframework.web.bind.annotation.RequestMapping | spring web     |
