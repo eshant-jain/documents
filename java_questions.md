@@ -110,12 +110,6 @@ How did you configure the said framework?
 How did you handle CORS?  
 
 # Hibernate
-How ORM Works?  
-Object life-cycle?    
-LazyInitializationException?
-What is LazyLoading in Hibernate?  
-What are the types of cache?  
-Why do we need Secondary cache(Advantages)?  
 
 
 # Spring
