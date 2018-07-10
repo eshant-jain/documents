@@ -105,12 +105,8 @@ Ans: it will work fine as a new instance with 456 is created for Employee class.
 use of '_' as an identifier might not be supported in releases after Java SE 8
 
 # Rest
-Which Framework you have used and why?  
-How did you configure the said framework?  
-How did you handle CORS?  
 
 # Hibernate
-
 
 # Spring
 
