@@ -214,5 +214,6 @@ Class and respective Jars
 | org.springframework.web.bind.annotation.RequestMapping | spring web     |
 | org.springframework.web.bind.annotation.PathVariable   | spring web     |
 
-| Tables        | Are           |
+| Class        | Jar Name           |
 | ------------- |:-------------:|
+| org.springframework.stereotype.Controller              | spring context |
